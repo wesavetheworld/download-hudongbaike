@@ -1,0 +1,1 @@
+This python script scrapes the popular Chinese Wiki site Hudong Baike.  The script put the downloaded content in a sqlite3 database.  If you found any specific article will cause connection reset, add it to the BANNED LIST in the script.  Requires html5lib.
