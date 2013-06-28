@@ -21,7 +21,8 @@ WORD_LIST_URL = "http://fenlei.baike.com/%s/list"
 #Wiki page URL.
 WIKI_URL = "http://www.baike.com/wiki/%s"
 #Words that may cause connection reset.
-BANNED_WORDS = [u"邓正来", u"盛雪", u"彭小枫", u"章沁生", u"王顺喜"]
+BANNED_WORDS = [u"邓正来", u"盛雪", u"彭小枫", u"章沁生", u"王顺喜",
+                u"王斌余"]
 
 
 def sql_escape(s):
