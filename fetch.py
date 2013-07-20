@@ -133,8 +133,8 @@ def get_words(category):
 
     #Find all words.
     a_list = doc.findall(".//dd/a")
-    words = set(a.text.strip for a in a_list)
-    print "Find %d words." % len(words)
+    words = set(a.text.strip() for a in a_list)
+    print "Found %d words." % len(words)
     return words
 
 
@@ -152,13 +152,13 @@ def get_word_list(categories, db_conn):
     for c in categories:
         if c not in downloaded:
             new_words = get_words(c)
-            words = words.union(new_words)
             for w in new_words:
                 if w not in words:
                     cursor.execute("INSERT INTO Word VALUES (%s)"
                                    % sql_escape(w))
+            words = words.union(new_words)
             cursor.execute("INSERT INTO Downloaded VALUES (%s)"
-                           % sql_escape(w))
+                           % sql_escape(c))
             db_conn.commit()
 
     print "Found %s words." % len(words)
